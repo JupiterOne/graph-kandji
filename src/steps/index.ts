@@ -1,6 +1,13 @@
 import { accountSteps } from './account';
-import { accessSteps } from './access';
+import { deviceSteps } from './device';
+import { appSteps } from './app';
+import { userSteps } from './user';
 
-const integrationSteps = [...accountSteps, ...accessSteps];
+const integrationSteps = [
+  ...accountSteps,
+  ...appSteps,
+  ...deviceSteps,
+  ...userSteps,
+];
 
 export { integrationSteps };
