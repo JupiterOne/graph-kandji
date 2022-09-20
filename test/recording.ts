@@ -14,11 +14,33 @@ export function setupProjectRecording(
     ...input,
     redactedRequestHeaders: ['Authorization'],
     redactedResponseHeaders: ['set-cookie'],
-    mutateEntry: mutations.unzipGzippedRecordingEntry,
-    /*mutateEntry: (entry) => {
+    mutateEntry: (entry) => {
+      mutations.unzipGzippedRecordingEntry(entry);
       redact(entry);
-    },*/
+    },
+    options: {
+      matchRequestsBy: {
+        url: {
+          hostname: false,
+        },
+      },
+    },
   });
+}
+
+function redact(entry) {
+  const responseText = entry.response.content.text;
+  const parsedResponseText = JSON.parse(responseText.replace(/\r?\n|\r/g, ''));
+
+  if (Array.isArray(parsedResponseText)) {
+    for (let i = 0; i < parsedResponseText.length; i++) {
+      if (parsedResponseText[i].serial_number) {
+        parsedResponseText[i].serial_number = '[REDACTED]';
+      }
+    }
+  }
+
+  entry.response.content.text = JSON.stringify(parsedResponseText);
 }
 
 // a more sophisticated redaction example below:
