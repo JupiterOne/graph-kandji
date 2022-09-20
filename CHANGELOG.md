@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 1.0.0 - 2022-09-20
+
 - Ingest new entities
   - `kandji_account`
   - `kandji_app`
