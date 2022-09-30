@@ -5,7 +5,7 @@ questions:
  - id: integration-question-kandji-custom-app-with-no-bundleSize-identified
    title: Which Kandji custom applications do not have a bundleSize?
    description:
-     Returns a list of custom Kandji applications that do not have a bundleSize.
+     Returns a list of custom Kandji applications that do not have a bundleSize limit.
    queries:  
      - name: bad
        query: |
@@ -13,3 +13,15 @@ questions:
    tags:
      - kandji
      - applications
+
+ - id: integration-question-kandji-custom-self-service-app-without-a-registered-apple-device
+   title: Which Kandji self service applications do not have a registered Apple device?
+   description:
+     Returns a list of Kandji custom self service applications that have not registered an Apple device.
+   queries:  
+     - name: bad
+       query: |
+         FIND kandji_app with name ~= "Self" THAT HAS kandji_device WITH category ~= "" AND make ~= ""
+   tags:
+     - kandji
+     - workflow     
