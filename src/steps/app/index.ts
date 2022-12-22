@@ -2,13 +2,14 @@ import {
   createDirectRelationship,
   IntegrationStep,
   IntegrationStepExecutionContext,
+  parseTimePropertyValue,
   RelationshipClass,
 } from '@jupiterone/integration-sdk-core';
 import { createAPIClient } from '../../client';
 
 import { IntegrationConfig } from '../../config';
 import { IntegrationSteps, Entities, Relationships } from '../constants';
-import { createAppEntity } from './converter';
+import { createAppEntity, getAppKey } from './converter';
 
 export async function fetchDeviceApps({
   jobState,
@@ -21,14 +22,31 @@ export async function fetchDeviceApps({
     async (deviceEntity) => {
       const deviceId = deviceEntity.id;
       await apiClient.iterateDeviceApps(deviceId as string, async (app) => {
-        const appEntity = createAppEntity(app);
+        // Switching to using bundle_id for the key will cause deliberate
+        // duplication so devices will share apps.  Check to see if another
+        // device has already created the appEntity we need
+        let appEntity = await jobState.findEntity(getAppKey(app.bundle_id));
+        if (!appEntity) {
+          appEntity = createAppEntity(app);
+          await jobState.addEntity(appEntity);
+        }
 
-        await jobState.addEntity(appEntity);
         await jobState.addRelationship(
           createDirectRelationship({
             _class: RelationshipClass.HAS,
             from: deviceEntity,
             to: appEntity,
+            // Moving properties that can't be shared in the appEntity to the
+            // device_has_app relationship.
+            properties: {
+              id: app.app_id,
+              signature: app.signature,
+              bundleSize: app.bundle_size,
+              path: app.path,
+              version: app.version,
+              createdOn: parseTimePropertyValue(app.creation_date),
+              updatedOn: parseTimePropertyValue(app.modification_date),
+            },
           }),
         );
       });
