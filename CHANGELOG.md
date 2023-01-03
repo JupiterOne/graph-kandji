@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 1.1.0 - 2023-01-03
+
+### Changed
+
+- `kandji_app` now uses the bundle ID to generate its key.
+
 ## 1.0.0 - 2022-09-20
 
 - Ingest new entities
