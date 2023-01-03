@@ -76,7 +76,7 @@ export const Entities: Record<
         path: { type: 'string' },
         version: { type: 'string' },
       },
-      required: ['id'],
+      required: ['bundleId'],
     },
   },
   USER: {
