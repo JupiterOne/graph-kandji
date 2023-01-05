@@ -8,6 +8,13 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 1.1.1 - 2023-01-05
+
+### Changed
+
+- When bundle ID is unavailable for a `kandji_app` fall back to using the
+  application ID for key generation.
+
 ## 1.1.0 - 2023-01-03
 
 ### Changed
