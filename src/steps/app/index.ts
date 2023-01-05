@@ -9,7 +9,7 @@ import { createAPIClient } from '../../client';
 
 import { IntegrationConfig } from '../../config';
 import { IntegrationSteps, Entities, Relationships } from '../constants';
-import { createAppEntity, getAppKey } from './converter';
+import { createAppEntity, getAppKey, getDeviceHasAppKey } from './converter';
 
 export async function fetchDeviceApps({
   jobState,
@@ -25,7 +25,7 @@ export async function fetchDeviceApps({
         // Switching to using bundle_id for the key will cause deliberate
         // duplication so devices will share apps.  Check to see if another
         // device has already created the appEntity we need
-        let appEntity = await jobState.findEntity(getAppKey(app.bundle_id));
+        let appEntity = await jobState.findEntity(getAppKey(app));
         if (!appEntity) {
           appEntity = createAppEntity(app);
           await jobState.addEntity(appEntity);
@@ -37,8 +37,11 @@ export async function fetchDeviceApps({
             from: deviceEntity,
             to: appEntity,
             // Moving properties that can't be shared in the appEntity to the
-            // device_has_app relationship.
+            // device_has_app relationship.  Also manually constructing the
+            // _key to prevent data loss when we have multiple versions of
+            // the same app installed on a machine.
             properties: {
+              _key: getDeviceHasAppKey(deviceId as string, app.app_id),
               id: app.app_id,
               signature: app.signature,
               bundleSize: app.bundle_size,
