@@ -7,7 +7,7 @@ questions:
    description:
      Returns a list of custom Kandji applications that do not have a bundleSize limit.
    queries:  
-     - name: bad
+     - name: BAD
        query: |
          FIND kandji_app with (displayName != "apple" AND bundleSize = "")
    tags:
