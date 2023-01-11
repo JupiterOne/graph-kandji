@@ -21,7 +21,7 @@ questions:
    queries:  
      - name: BAD
        query: |
-         FIND kandji_app with name ~= "Self" THAT HAS kandji_device WITH category ~= "" AND make ~= ""
+         FIND kandji_app with name ~= "Self" THAT HAS kandji_device WITH category = "" AND make = ""
    tags:
      - kandji
      - workflow     
