@@ -19,7 +19,7 @@ questions:
    description:
      Returns a list of Kandji custom self service applications that have not registered an Apple device.
    queries:  
-     - name: bad
+     - name: BAD
        query: |
          FIND kandji_app with name ~= "Self" THAT HAS kandji_device WITH category ~= "" AND make ~= ""
    tags:
