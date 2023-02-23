@@ -1,6 +1,7 @@
 import {
   createIntegrationEntity,
   Entity,
+  parseTimePropertyValue,
 } from '@jupiterone/integration-sdk-core';
 
 import { Entities } from '../constants';
@@ -40,12 +41,18 @@ export function createAppEntity(app: App): Entity {
         _key: getAppKey(app),
         _type: Entities.APP._type,
         _class: Entities.APP._class,
+        id: app.app_id,
         name: app.app_name,
         bundleId: app.bundle_id,
         appStoreVendable: app.app_store_vendable,
         deviceBasedVpp: app.device_based_vpp,
         source: app.source,
         process: app.process,
+        path: app.path,
+        bundleSize: app.bundle_size,
+        version: app.version,
+        createdOn: parseTimePropertyValue(app.creation_date),
+        updatedOn: parseTimePropertyValue(app.modification_date),
       },
     },
   });

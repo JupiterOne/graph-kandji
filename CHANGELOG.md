@@ -8,6 +8,21 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 1.2.0 - 2023-02-23
+
+### Added
+
+- New properties added to `kandji_app`
+
+  | Property     | Type     |
+  | ------------ | -------- |
+  | `id`         | `string` |
+  | `path`       | `string` |
+  | `bundleSize` | `number` |
+  | `version`    | `string` |
+  | `createdOn`  | `number` |
+  | `updatedOn`  | `number` |
+
 ## 1.1.1 - 2023-01-05
 
 ### Changed
