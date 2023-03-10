@@ -8,7 +8,7 @@ import {
 } from '@jupiterone/integration-sdk-core';
 
 import { IntegrationConfig } from './config';
-import { Device, App, DeviceAppsResponse } from './types';
+import { Device, App, DeviceAppsResponse, DeviceDetails } from './types';
 
 export type ResourceIteratee<T> = (each: T) => Promise<void> | void;
 
@@ -119,6 +119,11 @@ export class APIClient {
     for (const app of apps) {
       await iteratee(app);
     }
+  }
+
+  public async fetchDeviceDetails(deviceId: string) {
+    const endpoint = this.withBaseUri(`devices/${deviceId}/details`);
+    return this.request<DeviceDetails>(endpoint);
   }
 }
 

@@ -69,7 +69,7 @@ export interface DeviceDetails {
     time_since_boot: string;
     last_user: string;
     asset_tag: string;
-    assigned_user: string;
+    assigned_user: DeviceUser;
     blueprint_name: string;
     blueprint_uuid: string;
   };
