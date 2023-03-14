@@ -64,7 +64,9 @@ If you need help with this integration, please contact
 - Select a **Polling Interval** that you feel is sufficient for your monitoring
   needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the **Kandji Access Token** and **Kandji API URL** generated for use by
-  JupiterOne.
+  JupiterOne. Please make sure that **Kandji API URL** is entered using the
+  following format `https://{yourApiUrl}/api/v1/`, adding `https://` at the
+  beginning and `/api/v1/` at the end of the api URL.
 
 4. Click **Create Configuration** once all values are provided.
 
