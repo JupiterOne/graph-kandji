@@ -25,7 +25,7 @@ export async function fetchDevices({
   const accountEntity = (await jobState.getData(ACCOUNT_ENTITY_KEY)) as Entity;
 
   await apiClient.iterateDevices(async (device) => {
-    const deviceDetails = await apiClient.fetchDeviceDetails(device.device_id);
+    const deviceDetails = await apiClient.fetchDeviceDetails(device.device_id!);
     const deviceEntity = createDeviceEntity(device, deviceDetails);
 
     await jobState.addEntity(deviceEntity);
