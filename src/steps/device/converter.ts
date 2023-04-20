@@ -103,6 +103,7 @@ export function createDeviceEntity(
         volumes: volumes?.map((volume) => volume.identifier),
         'network.localHostname': network?.local_hostname,
         'network.macAddress': network?.mac_address,
+        macAddress: network?.mac_address,
         'network.ipAddress': network?.ip_address,
         'network.publicIp': network?.public_ip,
         'users.regularUsers': users?.regular_users?.map((user) => user.uid),
