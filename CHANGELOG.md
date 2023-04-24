@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 1.1.3 - 2023-04-24
+
+### Changed
+
+- Added property `macAddress` to Device entity.
+
 ## 1.1.1 - 2023-01-05
 
 ### Changed
