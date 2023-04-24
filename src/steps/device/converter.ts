@@ -102,7 +102,7 @@ export function createDeviceEntity(
         'hardwareOverview.memory': hardware_overview?.memory,
         volumes: volumes?.map((volume) => volume.identifier),
         'network.localHostname': network?.local_hostname,
-        /**s
+        /**
         @deprecated The 'network.macAddress' property is deprecated and will be removed 
         in future versions. Use 'macAddress' instead.
         */
