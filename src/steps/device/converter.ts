@@ -23,6 +23,9 @@ export function createDeviceEntity(
     users,
     installed_profiles,
   } = deviceDetails;
+
+  const lastSeenOn = parseTimePropertyValue(device?.last_check_in);
+
   return createIntegrationEntity({
     entityData: {
       source: {
@@ -39,10 +42,12 @@ export function createDeviceEntity(
         make: 'Apple Inc.',
         model: device?.model,
         serial: device?.serial_number,
+        serialNumber: device?.serial_number,
         category: device?.platform,
         platform: device?.platform === 'Mac' ? 'darwin' : 'ios',
         osVersion: device?.os_version,
-        lastCheckinOn: parseTimePropertyValue(device?.last_check_in),
+        lastCheckinOn: lastSeenOn,
+        lastSeenOn,
         'user.id': device.user !== '' ? device?.user?.id : null,
         'user.name': device.user !== '' ? device?.user?.name : null,
         'user.email': device.user !== '' ? device?.user?.email : null,
@@ -103,7 +108,7 @@ export function createDeviceEntity(
         volumes: volumes?.map((volume) => volume.identifier),
         'network.localHostname': network?.local_hostname,
         /**
-        @deprecated The 'network.macAddress' property is deprecated and will be removed 
+        @deprecated The 'network.macAddress' property is deprecated and will be removed
         in future versions. Use 'macAddress' instead.
         */
         'network.macAddress': network?.mac_address,
