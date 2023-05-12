@@ -8,6 +8,15 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- The following new properties are added to `kandji_device`
+
+  | Property       | Type     |
+  | -------------- | -------- |
+  | `lastSeenOn`   | `number` |
+  | `serialNumber` | `string` |
+
 ## 1.1.3 - 2023-04-24
 
 ### Changed
