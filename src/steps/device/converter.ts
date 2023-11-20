@@ -43,6 +43,7 @@ export function createDeviceEntity(
         model: device?.model,
         serial: device?.serial_number,
         serialNumber: device?.serial_number,
+        encrypted: filevault?.filevault_enabled,
         category: device?.platform,
         platform: device?.platform === 'Mac' ? 'darwin' : 'ios',
         osVersion: device?.os_version,
