@@ -6,7 +6,6 @@ import {
   Entity,
 } from '@jupiterone/integration-sdk-core';
 
-
 export function createCustomProfileEntity(
   customProfile: CustomProfiles,
 ): Entity {
