@@ -17,15 +17,6 @@ export async function fetchCustomProfiles({
     const customProfileEntity = createCustomProfileEntity(customProfile);
 
     await jobState.addEntity(customProfileEntity);
-    //        if (accountEntity && deviceEntity) {
-    //          await jobState.addRelationship(
-    //            createDirectRelationship({
-    //              _class: RelationshipClass.HAS,
-    //              from: accountEntity,
-    //              to: deviceEntity,
-    //            }),
-    //          );
-    //        }
   });
 }
 
