@@ -11,10 +11,11 @@ export enum IntegrationSteps {
   DEVICES = 'fetch-devices',
   FETCH_DEVICE_USERS = 'fetch-device-users',
   FETCH_DEVICE_APPS = 'fetch-device-apps',
+  FETCH_CUSTOM_PROFILES = 'fetch-custom-profiles',
 }
 
 export const Entities: Record<
-  'ACCOUNT' | 'DEVICE' | 'APP' | 'USER',
+  'ACCOUNT' | 'DEVICE' | 'APP' | 'USER' | 'CUSTOM_PROFILE',
   StepEntityMetadata
 > = {
   ACCOUNT: {
@@ -140,6 +141,20 @@ export const Entities: Record<
         isArchived: { type: 'boolean' },
       },
       required: ['id', 'username', 'email'],
+    },
+  },
+  CUSTOM_PROFILE: {
+    resourceName: 'Custom_Profile',
+    _type: 'kandji_profile',
+    _class: ['Configuration'],
+    schema: {
+      properties: {
+        name: { type: 'string' },
+        id: { type: 'string' },
+        active: { type: 'boolean' },
+        profile: { type: 'string' },
+        mdmIdentifier: { type: 'string' },
+      },
     },
   },
 };
