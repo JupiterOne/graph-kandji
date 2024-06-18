@@ -6,9 +6,6 @@ import {
   Entity,
 } from '@jupiterone/integration-sdk-core';
 
-export function customProfileKey(customProfile: CustomProfiles): string {
-  return `kandji_profile:${customProfile.id}`;
-}
 
 export function createCustomProfileEntity(
   customProfile: CustomProfiles,
