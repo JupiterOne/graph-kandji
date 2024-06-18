@@ -13,7 +13,7 @@ export function createCustomProfileEntity(
     entityData: {
       source: customProfile,
       assign: {
-        _key: customProfileKey(customProfile),
+        _key: `kandji_profile:${customProfile.id}`,
         _type: Entities.CUSTOM_PROFILE._type,
         _class: Entities.CUSTOM_PROFILE._class,
 
