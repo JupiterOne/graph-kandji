@@ -34,6 +34,16 @@ interface Profile {
   install_date: string;
 }
 
+export interface CustomProfiles {
+  id: string;
+  name: string;
+  active: boolean;
+  profile: string;
+  mdm_identifier: string;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface Device {
   device_id?: string;
   device_name?: string;

@@ -8,7 +8,13 @@ import {
 } from '@jupiterone/integration-sdk-core';
 
 import { IntegrationConfig } from './config';
-import { Device, App, DeviceAppsResponse, DeviceDetails } from './types';
+import {
+  Device,
+  App,
+  DeviceAppsResponse,
+  DeviceDetails,
+  CustomProfiles,
+} from './types';
 
 export type ResourceIteratee<T> = (each: T) => Promise<void> | void;
 
@@ -88,6 +94,20 @@ export class APIClient {
     }
   }
 
+  public async iterateCustomProfiles(
+    iteratee: ResourceIteratee<CustomProfiles>,
+  ) {
+    const endpoint = this.withBaseUri('/api/v1/library/custom-profiles', {
+      page: '1',
+    });
+
+    const body = await this.request<CustomProfiles[]>(endpoint);
+    const results = (body as any).results;
+
+    for (const result of results) {
+      await iteratee(result);
+    }
+  }
   public async iterateDevices(iteratee: ResourceIteratee<Device>) {
     let offset = 0;
     let length = 0;
