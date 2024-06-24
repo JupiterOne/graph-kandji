@@ -1160,14 +1160,14 @@
     ajv "^8.0.0"
     ajv-formats "^2.0.0"
 
-"@jupiterone/integration-sdk-cli@^10.7.1":
-  version "10.7.1"
-  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-cli/-/integration-sdk-cli-10.7.1.tgz#3e72556618d7552967d6206a6ce8ceab5352c713"
-  integrity sha512-iH2s8YdfCArk/VW9cDKimmERGzLLejnQQ/gBslwXTp06hpjyfK3i2yLbsqrNexONd2yERmVlaejjZTH5Upds+g==
+"@jupiterone/integration-sdk-cli@^11.8.0":
+  version "11.8.0"
+  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-cli/-/integration-sdk-cli-11.8.0.tgz#964f68fa54554d912e326234ac0103b3a73358ba"
+  integrity sha512-BhAfHVYYKKHR4DLJExCQw2/11Qzr++aQJFitJLNq4RNSPddQriQWAaETqR55RDFIs6UUkkLhwc8+1eEHWNm4UA==
   dependencies:
     "@jupiterone/data-model" "^0.54.0"
-    "@jupiterone/integration-sdk-core" "^10.7.1"
-    "@jupiterone/integration-sdk-runtime" "^10.7.1"
+    "@jupiterone/integration-sdk-core" "^11.8.0"
+    "@jupiterone/integration-sdk-runtime" "^11.8.0"
     chalk "^4"
     commander "^9.4.0"
     fs-extra "^10.1.0"
@@ -1182,23 +1182,22 @@
     runtypes "5.1.0"
     upath "^1.2.0"
     url-exists "^1.0.3"
-    vis "^4.21.0-EOL"
 
-"@jupiterone/integration-sdk-core@^10.0.0", "@jupiterone/integration-sdk-core@^10.7.1":
-  version "10.7.1"
-  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-core/-/integration-sdk-core-10.7.1.tgz#c4a857a8905924ab77643be5ef4f84ffb248f721"
-  integrity sha512-VZwM5tqd+NE011d2yLCe0iNfu11lLE0+j7p3sqwVh26SW356CCkKEo8BnFhjGG+9v3WX9/i0b0YTyFwjOv2v2Q==
+"@jupiterone/integration-sdk-core@^11.02", "@jupiterone/integration-sdk-core@^11.8.0":
+  version "11.8.0"
+  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-core/-/integration-sdk-core-11.8.0.tgz#14763d1549cc86135bd4cc958184d22a2a4867da"
+  integrity sha512-9yWBhBHGaeIxK9QWlrFTCFI7EwH2RThZz4k5/7NsZ2HND8Mrl85HyeDdIboVMJ9T/pJ6LjQ+fJc78OPliKX3tg==
   dependencies:
     "@jupiterone/data-model" "^0.54.0"
     lodash "^4.17.21"
 
-"@jupiterone/integration-sdk-dev-tools@^10.0.0":
-  version "10.7.1"
-  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-dev-tools/-/integration-sdk-dev-tools-10.7.1.tgz#ebc3ec70556cdc6fdf38e687b1cb5566538ee865"
-  integrity sha512-o+kei1B75hILOcZrzH0sZCVFgtwWT2+Gcj2i9G19RSjNPuNWxQjjBU1npBXTkxYeY9Cbray/UC0gqMW4Glcjsw==
+"@jupiterone/integration-sdk-dev-tools@^11.02":
+  version "11.8.0"
+  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-dev-tools/-/integration-sdk-dev-tools-11.8.0.tgz#f95047018c523639a75d36d5d24574f4221990d3"
+  integrity sha512-FTPjSGmRInu5vPGiRNA/lIL1Qq5kMvUFKW67m7L+TXpr1lAqzijRRjCGY6yIYd70l8RtUz8SIzG8fNsoP2BC8A==
   dependencies:
-    "@jupiterone/integration-sdk-cli" "^10.7.1"
-    "@jupiterone/integration-sdk-testing" "^10.7.1"
+    "@jupiterone/integration-sdk-cli" "^11.8.0"
+    "@jupiterone/integration-sdk-testing" "^11.8.0"
     "@types/jest" "^29.5.3"
     "@types/node" "^18"
     "@typescript-eslint/eslint-plugin" "^6.2.1"
@@ -1215,16 +1214,15 @@
     ts-node "^9.1.1"
     typescript "^5.1.6"
 
-"@jupiterone/integration-sdk-runtime@^10.7.1":
-  version "10.7.1"
-  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-runtime/-/integration-sdk-runtime-10.7.1.tgz#b896e8582b80b02898cdf92a5fc62a4574642d65"
-  integrity sha512-2QkJOlA2g6nOyQ153XS2jiFh1cYsgHwsNvj2cc1giYg7Jy+BWHYOAX8H+4ExFSk/4KnnkXbZv9tg/+EDuXYD+w==
+"@jupiterone/integration-sdk-runtime@^11.8.0":
+  version "11.8.0"
+  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-runtime/-/integration-sdk-runtime-11.8.0.tgz#d9f796186e4261550844692694128b58e685a9ce"
+  integrity sha512-48GUUxN0oPvXH+x7l2zQSPL8pBFcVqY0q8a5ACDUgHVaH+Wi51Q39+Hw9RC8w5aKv6sdS+LV8jZPQpL9URBX0A==
   dependencies:
-    "@jupiterone/integration-sdk-core" "^10.7.1"
-    "@lifeomic/alpha" "^5.1.1"
+    "@jupiterone/integration-sdk-core" "^11.8.0"
+    "@lifeomic/alpha" "^5.2.0"
     "@lifeomic/attempt" "^3.0.3"
     async-sema "^3.1.0"
-    axios "^0.27.0"
     bunyan "^1.8.12"
     bunyan-format "^0.2.1"
     dependency-graph "^0.9.0"
@@ -1237,20 +1235,20 @@
     p-queue "^6.3.0"
     rimraf "^3.0.2"
 
-"@jupiterone/integration-sdk-testing@^10.0.0", "@jupiterone/integration-sdk-testing@^10.7.1":
-  version "10.7.1"
-  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-testing/-/integration-sdk-testing-10.7.1.tgz#bc5ac8a5797a08e0530217dd982fd44c1c057903"
-  integrity sha512-L5mIZnH8cz0m1ijwgfx3H3fDqi/iRxpxKLrHY/XADVuAMNrJwRGExajPDXoeBKGv1L8BXG0ENxaXbCR3cAbwfQ==
+"@jupiterone/integration-sdk-testing@^11.02", "@jupiterone/integration-sdk-testing@^11.8.0":
+  version "11.8.0"
+  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-testing/-/integration-sdk-testing-11.8.0.tgz#57c105514f766360611dd1c7bbb7249c58f4a380"
+  integrity sha512-kLIJRZntZtOr9AUSO+yEDX1tmDKON/iNcuXoR/F/qm+zogV137o831ECTVvS+EJBEPSLfrcu1YLgxwh6Nm6qAA==
   dependencies:
-    "@jupiterone/integration-sdk-core" "^10.7.1"
-    "@jupiterone/integration-sdk-runtime" "^10.7.1"
+    "@jupiterone/integration-sdk-core" "^11.8.0"
+    "@jupiterone/integration-sdk-runtime" "^11.8.0"
     "@pollyjs/adapter-node-http" "^6.0.5"
     "@pollyjs/core" "^6.0.5"
     "@pollyjs/persister-fs" "^6.0.5"
     deepmerge "^4.2.2"
     lodash "^4.17.15"
 
-"@lifeomic/alpha@^5.1.1":
+"@lifeomic/alpha@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@lifeomic/alpha/-/alpha-5.2.0.tgz#aa420217a74b798509506dc671ea44587a553a84"
   integrity sha512-xe7DizIVZ4LNwiYGwhmS1otYEWCtiPmkEGJ6hohLlhdnEym8pfX0nBasknrXDPepN8QB/RQ5Ir+6Yh2Ms/AYIg==
@@ -2444,7 +2442,7 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.13.0.tgz#d9b802e9bb9c248d7be5f7f5ef178dc3684e9dcc"
   integrity sha512-3AungXC4I8kKsS9PuS4JH2nc+0bVY/mjgrephHTIi8fpEeGsTHBUJeosp0Wc1myYMElmD0B3Oc4XL/HVJ4PV2g==
 
-axios@^0.27.0, axios@^0.27.2:
+axios@^0.27.2:
   version "0.27.2"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
   integrity sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==
@@ -3194,11 +3192,6 @@ electron-to-chromium@^1.4.796:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.807.tgz#4d6c5ea1516f0164ac5bfd487ccd4ee9507c8f01"
   integrity sha512-kSmJl2ZwhNf/bcIuCH/imtNOKlpkLDn2jqT5FJ+/0CXjhnFaOa9cOe9gHKKy71eM49izwuQjZhKk+lWQ1JxB7A==
 
-emitter-component@^1.1.1:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/emitter-component/-/emitter-component-1.1.2.tgz#d65af5833dc7c682fd0ade35f902d16bc4bad772"
-  integrity sha512-QdXO3nXOzZB4pAjM0n6ZE+R9/+kPpECA/XSELIcc54NeYVnBqIk+4DFiBgK+8QbV3mdvTG6nedl7dTYgO+5wDw==
-
 emittery@^0.13.1:
   version "0.13.1"
   resolved "https://registry.yarnpkg.com/emittery/-/emittery-0.13.1.tgz#c04b8c3457490e0847ae51fced3af52d338e3dad"
@@ -3920,11 +3913,6 @@ graphemer@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/graphemer/-/graphemer-1.4.0.tgz#fb2f1d55e0e3a1849aeffc90c4fa0dd53a0e66c6"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
-
-hammerjs@^2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
-  integrity sha512-tSQXBXS/MWQOn/RKckawJ61vvsDpCom87JgxiYdGwHdOa0ht0vzUWDlfioofFCRU0L+6NGDt6XzbgoJvZkMeRQ==
 
 handlebars@^4.4.3:
   version "4.7.8"
@@ -4821,11 +4809,6 @@ jsprim@^1.2.2:
     json-schema "0.4.0"
     verror "1.10.0"
 
-keycharm@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/keycharm/-/keycharm-0.2.0.tgz#fa6ea2e43b90a68028843d27f2075d35a8c3e6f9"
-  integrity sha512-i/XBRTiLqRConPKioy2oq45vbv04e8x59b0mnsIRQM+7Ec/8BC7UcL5pnC4FMeGb8KwG7q4wOMw7CtNZf5tiIg==
-
 keyv@^4.5.3:
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.4.tgz#a879a99e29452f942439f2a405e3af8b31d4de93"
@@ -5118,7 +5101,7 @@ mkdirp@~0.5.1:
   dependencies:
     minimist "^1.2.6"
 
-moment@^2.18.1, moment@^2.19.3:
+moment@^2.19.3:
   version "2.30.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.30.1.tgz#f8c91c07b7a786e30c59926df530b4eac96974ae"
   integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
@@ -5675,13 +5658,6 @@ propagate@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/propagate/-/propagate-2.0.1.tgz#40cdedab18085c792334e64f0ac17256d38f9a45"
   integrity sha512-vGrhOavPSTz4QVNuBNdcNXePNdNMaO1xj9yBeH1ScQPjk/rhg9sSlCXPhMkFuaNNW/syTvYqsnbIJxMBfRbbag==
-
-propagating-hammerjs@^1.4.6:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/propagating-hammerjs/-/propagating-hammerjs-1.5.0.tgz#223d58465489b64879fb0cef2c99ba92b294c239"
-  integrity sha512-3PUXWmomwutoZfydC+lJwK1bKCh6sK6jZGB31RUX6+4EXzsbkDZrK4/sVR7gBrvJaEIwpTVyxQUAd29FKkmVdw==
-  dependencies:
-    hammerjs "^2.0.8"
 
 proxy-addr@~2.0.7:
   version "2.0.7"
@@ -6593,17 +6569,6 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
-
-vis@^4.21.0-EOL:
-  version "4.21.0-EOL"
-  resolved "https://registry.yarnpkg.com/vis/-/vis-4.21.0-EOL.tgz#e397085d439de6f6ff1f3c46287e5bef51b47b03"
-  integrity sha512-JVS1mywKg5S88XbkDJPfCb3n+vlg5fMA8Ae2hzs3KHAwD4ryM5qwlbFZ6ReDfY8te7I4NLCpuCoywJQEehvJlQ==
-  dependencies:
-    emitter-component "^1.1.1"
-    hammerjs "^2.0.8"
-    keycharm "^0.2.0"
-    moment "^2.18.1"
-    propagating-hammerjs "^1.4.6"
 
 walker@^1.0.8:
   version "1.0.8"
