@@ -8,10 +8,6 @@ and this project adheres to
 
 ## [Unreleased]
 
-## 1.2.2 - 2024-06-24
-
-### Changed
-
 - Updated the `integration-sdk-*` packages to the latest version (12.8.3).
 
 ## 1.2.0 - 2023-05-12
