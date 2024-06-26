@@ -4,8 +4,8 @@ import {
   parseTimePropertyValue,
 } from '@jupiterone/integration-sdk-core';
 
-import { Entities } from '../constants';
 import { Device, DeviceDetails } from '../../types';
+import { createDeviceAssignEntity } from '../../entities';
 
 export function createDeviceEntity(
   device: Device,
@@ -24,7 +24,7 @@ export function createDeviceEntity(
     installed_profiles,
   } = deviceDetails;
 
-  const lastSeenOn = parseTimePropertyValue(device?.last_check_in);
+  const lastSeenOn = parseTimePropertyValue(device?.last_check_in) ?? null;
 
   return createIntegrationEntity({
     entityData: {
@@ -32,19 +32,18 @@ export function createDeviceEntity(
         ...device,
         ...deviceDetails,
       },
-      assign: {
+      assign: createDeviceAssignEntity({
         _key: device.device_id!,
-        _type: Entities.DEVICE._type,
-        _class: Entities.DEVICE._class,
         id: device?.device_id,
-        deviceId: device?.device_id,
-        name: device?.device_name,
+        deviceId: device?.device_id ?? null,
+        name: device?.device_name || '',
+        status: 'unknown',
         make: 'Apple Inc.',
-        model: device?.model,
-        serial: device?.serial_number,
-        serialNumber: device?.serial_number,
+        model: device?.model ?? null,
+        serial: device?.serial_number ?? null,
+        serialNumber: device?.serial_number ?? null,
         encrypted: filevault?.filevault_enabled,
-        category: device?.platform,
+        category: device?.platform ?? null,
         platform: device?.platform === 'Mac' ? 'darwin' : 'ios',
         osVersion: device?.os_version,
         lastCheckinOn: lastSeenOn,
@@ -121,7 +120,7 @@ export function createDeviceEntity(
         installedProfiles: installed_profiles?.map(
           (installed_profile) => installed_profile.uuid,
         ),
-      },
+      }),
     },
   });
 }

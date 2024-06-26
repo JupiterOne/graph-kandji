@@ -3,7 +3,7 @@ import {
   Entity,
 } from '@jupiterone/integration-sdk-core';
 
-import { Entities } from '../constants';
+import { createAccountAssignEntity } from '../../entities';
 
 export function createAccountEntity(): Entity {
   return createIntegrationEntity({
@@ -12,12 +12,10 @@ export function createAccountEntity(): Entity {
         id: 'kandji-account',
         name: 'Kandji Account',
       },
-      assign: {
+      assign: createAccountAssignEntity({
         _key: 'kandji-account',
-        _type: Entities.ACCOUNT._type,
-        _class: Entities.ACCOUNT._class,
         name: 'Kandji Account',
-      },
+      }),
     },
   });
 }
