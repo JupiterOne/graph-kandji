@@ -8,9 +8,13 @@ and this project adheres to
 
 ## [Unreleased]
 
-- Updated the integration entities to use createIntegrationHelpers (publish
-  types and fix any schema inconsistencies).
-- Updated the `integration-sdk-*` packages to the latest version (12.8.3).
+## 1.3.1 - 2024-06-26
+
+### Updated
+
+- Integration entities use createIntegrationHelpers (publish types and fix any
+  schema inconsistencies).
+- `integration-sdk-*` packages bumped to the latest version (12.8.3).
 
 ## 1.2.0 - 2023-05-12
 
