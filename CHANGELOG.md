@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 1.3.2 - 2024-06-27
+
+### Fixed
+
+- Fixed the custom-profile endpoint.
+
 ## 1.3.1 - 2024-06-26
 
 ### Updated

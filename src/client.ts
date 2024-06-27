@@ -97,7 +97,7 @@ export class APIClient {
   public async iterateCustomProfiles(
     iteratee: ResourceIteratee<CustomProfiles>,
   ) {
-    const endpoint = this.withBaseUri('/api/v1/library/custom-profiles', {
+    const endpoint = this.withBaseUri('library/custom-profiles', {
       page: '1',
     });
 
