@@ -14,6 +14,7 @@ import {
   DeviceAppsResponse,
   DeviceDetails,
   CustomProfiles,
+  Blueprint,
 } from './types';
 
 export type ResourceIteratee<T> = (each: T) => Promise<void> | void;
@@ -138,6 +139,19 @@ export class APIClient {
 
     for (const app of apps) {
       await iteratee(app);
+    }
+  }
+
+  public async iterateBlueprints(iteratee: ResourceIteratee<Blueprint>) {
+    const endpoint = this.withBaseUri('blueprints', {
+      page: '1',
+    });
+
+    const body = await this.request<Blueprint[]>(endpoint);
+    const results = (body as any).results;
+
+    for (const result of results) {
+      await iteratee(result);
     }
   }
 
