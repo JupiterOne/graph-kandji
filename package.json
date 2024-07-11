@@ -38,6 +38,7 @@
     "@jupiterone/integration-sdk-core": "^13.2.0"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.17.12",
     "@jupiterone/integration-sdk-core": "^13.2.0",
     "@jupiterone/integration-sdk-dev-tools": "^13.2.0",
     "@jupiterone/integration-sdk-testing": "^13.2.0"
