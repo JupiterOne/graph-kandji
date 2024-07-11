@@ -110,7 +110,7 @@ The following relationships are created:
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
 | --------------------- | --------------------- | --------------------- |
 | `kandji_account`      | **HAS**               | `kandji_device`       |
-| `kandji_device`       | **HAS**               | `kandji_app`          |
+| `kandji_device`       | **INSTALLED**         | `kandji_app`          |
 | `kandji_device`       | **HAS**               | `kandji_user`         |
 
 <!--

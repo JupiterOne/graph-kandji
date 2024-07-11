@@ -36,7 +36,7 @@ export const Entities: Record<
 };
 
 export const Relationships: Record<
-  'ACCOUNT_HAS_DEVICE' | 'DEVICE_HAS_APP' | 'DEVICE_HAS_USER',
+  'ACCOUNT_HAS_DEVICE' | 'DEVICE_INSTALLED_APP' | 'DEVICE_HAS_USER',
   StepRelationshipMetadata
 > = {
   ACCOUNT_HAS_DEVICE: {
@@ -45,10 +45,10 @@ export const Relationships: Record<
     _class: RelationshipClass.HAS,
     targetType: Entities.DEVICE._type,
   },
-  DEVICE_HAS_APP: {
-    _type: 'kandji_device_has_app',
+  DEVICE_INSTALLED_APP: {
+    _type: 'kandji_device_installed_app',
     sourceType: Entities.DEVICE._type,
-    _class: RelationshipClass.HAS,
+    _class: RelationshipClass.INSTALLED,
     targetType: Entities.APP._type,
   },
   DEVICE_HAS_USER: {
