@@ -1,17 +1,20 @@
 import { createBlueprintAssignEntity } from '../../entities';
 import { Blueprint } from '../../types';
 import {
-  //parseTimePropertyValue,
   createIntegrationEntity,
   Entity,
 } from '@jupiterone/integration-sdk-core';
+
+export function buildBlueprintEntityKey(id: string) {
+  return `kandji_blueprint:${id}`;
+}
 
 export function createBlueprintEntity(blueprint: Blueprint): Entity {
   return createIntegrationEntity({
     entityData: {
       source: blueprint,
       assign: createBlueprintAssignEntity({
-        _key: `kandji_blueprint:${blueprint.id}`,
+        _key: buildBlueprintEntityKey(blueprint.id),
         id: blueprint.id,
         name: blueprint.name,
         description: blueprint.description,

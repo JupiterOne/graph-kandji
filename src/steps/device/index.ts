@@ -15,6 +15,8 @@ import {
   ACCOUNT_ENTITY_KEY,
 } from '../constants';
 import { createDeviceEntity } from './converter';
+import { buildCustomProfileKey } from '../profile/converter';
+import { buildBlueprintEntityKey } from '../blueprints/converter';
 
 export async function fetchDevices({
   jobState,
@@ -38,6 +40,41 @@ export async function fetchDevices({
         }),
       );
     }
+
+    if (device.blueprint_id) {
+      const blueprintEntity = await jobState.findEntity(
+        buildBlueprintEntityKey(device.blueprint_id),
+      );
+      if (blueprintEntity) {
+        await jobState.addRelationship(
+          createDirectRelationship({
+            _class: RelationshipClass.ASSIGNED,
+            from: deviceEntity,
+            to: blueprintEntity,
+          }),
+        );
+      }
+    }
+
+    if (Array.isArray(deviceDetails.installed_profiles)) {
+      for (const installedProfile of deviceDetails.installed_profiles) {
+        if (installedProfile.uuid) {
+          const customProfileEntity = await jobState.findEntity(
+            buildCustomProfileKey(installedProfile.uuid),
+          );
+
+          if (customProfileEntity) {
+            await jobState.addRelationship(
+              createDirectRelationship({
+                _class: RelationshipClass.ASSIGNED,
+                from: deviceEntity,
+                to: customProfileEntity,
+              }),
+            );
+          }
+        }
+      }
+    }
   });
 }
 
@@ -46,8 +83,16 @@ export const deviceSteps: IntegrationStep<IntegrationConfig>[] = [
     id: IntegrationSteps.DEVICES,
     name: 'Fetch Devices',
     entities: [Entities.DEVICE],
-    relationships: [Relationships.ACCOUNT_HAS_DEVICE],
-    dependsOn: [IntegrationSteps.ACCOUNT],
+    relationships: [
+      Relationships.ACCOUNT_HAS_DEVICE,
+      Relationships.DEVICE_ASSIGNED_BLUEPRINT,
+      Relationships.DEVICE_ASSIGNED_PROFILE,
+    ],
+    dependsOn: [
+      IntegrationSteps.ACCOUNT,
+      IntegrationSteps.FETCH_BLUEPRINTS,
+      IntegrationSteps.FETCH_CUSTOM_PROFILES,
+    ],
     executionHandler: fetchDevices,
   },
 ];

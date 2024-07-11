@@ -8,6 +8,7 @@ export const [AccountEntityMetadata, createAccountAssignEntity] =
     _type: createEntityType('account'),
     description: 'Kandji Account',
     schema: SchemaType.Object({
+      vendor: SchemaType.Literal('Kandji'),
       name: SchemaType.String(),
     }),
   });

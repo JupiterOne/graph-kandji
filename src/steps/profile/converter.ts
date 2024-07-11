@@ -6,6 +6,10 @@ import {
   Entity,
 } from '@jupiterone/integration-sdk-core';
 
+export function buildCustomProfileKey(id: string) {
+  return `kandji_profile:${id}`;
+}
+
 export function createCustomProfileEntity(
   customProfile: CustomProfiles,
 ): Entity {
@@ -13,7 +17,7 @@ export function createCustomProfileEntity(
     entityData: {
       source: customProfile,
       assign: createCustomProfileAssignEntity({
-        _key: `kandji_profile:${customProfile.id}`,
+        _key: buildCustomProfileKey(customProfile.id),
 
         id: customProfile.id,
         name: customProfile.name,

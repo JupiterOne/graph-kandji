@@ -36,7 +36,11 @@ export const Entities: Record<
 };
 
 export const Relationships: Record<
-  'ACCOUNT_HAS_DEVICE' | 'DEVICE_INSTALLED_APP' | 'DEVICE_HAS_USER',
+  | 'ACCOUNT_HAS_DEVICE'
+  | 'DEVICE_INSTALLED_APP'
+  | 'DEVICE_HAS_USER'
+  | 'DEVICE_ASSIGNED_BLUEPRINT'
+  | 'DEVICE_ASSIGNED_PROFILE',
   StepRelationshipMetadata
 > = {
   ACCOUNT_HAS_DEVICE: {
@@ -56,5 +60,17 @@ export const Relationships: Record<
     sourceType: Entities.DEVICE._type,
     _class: RelationshipClass.HAS,
     targetType: Entities.USER._type,
+  },
+  DEVICE_ASSIGNED_BLUEPRINT: {
+    _type: 'kandji_device_assigned_blueprint',
+    sourceType: Entities.DEVICE._type,
+    _class: RelationshipClass.ASSIGNED,
+    targetType: Entities.BLUEPRINT._type,
+  },
+  DEVICE_ASSIGNED_PROFILE: {
+    _type: 'kandji_device_assigned_profile',
+    sourceType: Entities.DEVICE._type,
+    _class: RelationshipClass.ASSIGNED,
+    targetType: Entities.CUSTOM_PROFILE._type,
   },
 };

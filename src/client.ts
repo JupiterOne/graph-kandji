@@ -143,16 +143,26 @@ export class APIClient {
   }
 
   public async iterateBlueprints(iteratee: ResourceIteratee<Blueprint>) {
-    const endpoint = this.withBaseUri('blueprints', {
-      page: '1',
-    });
+    let offset = 0;
+    let length = 0;
 
-    const body = await this.request<Blueprint[]>(endpoint);
-    const results = (body as any).results;
+    do {
+      const endpoint = this.withBaseUri('blueprints', {
+        offset: `${offset}`,
+        limit: `${this.paginateEntitiesPerPage}`,
+      });
 
-    for (const result of results) {
-      await iteratee(result);
-    }
+      const { results } = await this.request<{ results: Blueprint[] }>(
+        endpoint,
+      );
+
+      for (const data of results) {
+        await iteratee(data);
+      }
+
+      offset += this.paginateEntitiesPerPage;
+      length = results.length;
+    } while (length > 0);
   }
 
   public async fetchDeviceDetails(deviceId: string) {

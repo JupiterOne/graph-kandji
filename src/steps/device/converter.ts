@@ -117,6 +117,9 @@ export function createDeviceEntity(
         'network.publicIp': network?.public_ip,
         'users.regularUsers': users?.regular_users?.map((user) => user.uid),
         'users.systemUsers': users?.system_users?.map((user) => user.uid),
+        /**
+         * @deprecated - this has been replaced with a relationship between device and profile.
+         */
         installedProfiles: installed_profiles?.map(
           (installed_profile) => installed_profile.uuid,
         ),

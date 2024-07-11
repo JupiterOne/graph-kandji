@@ -95,13 +95,14 @@ https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources      | Entity `_type`   | Entity `_class` |
-| -------------- | ---------------- | --------------- |
-| Account        | `kandji_account` | `Account`       |
-| App            | `kandji_app`     | `Application`   |
-| Custom_Profile | `kandji_profile` | `Configuration` |
-| Device         | `kandji_device`  | `Device`        |
-| User           | `kandji_user`    | `User`          |
+| Resources      | Entity `_type`     | Entity `_class` |
+| -------------- | ------------------ | --------------- |
+| Account        | `kandji_account`   | `Account`       |
+| App            | `kandji_app`       | `Application`   |
+| Blueprint      | `kandji_blueprint` | `Configuration` |
+| Custom_Profile | `kandji_profile`   | `Configuration` |
+| Device         | `kandji_device`    | `Device`        |
+| User           | `kandji_user`      | `User`          |
 
 ### Relationships
 
@@ -111,6 +112,8 @@ The following relationships are created:
 | --------------------- | --------------------- | --------------------- |
 | `kandji_account`      | **HAS**               | `kandji_device`       |
 | `kandji_device`       | **INSTALLED**         | `kandji_app`          |
+| `kandji_device`       | **ASSIGNED**          | `kandji_blueprint`    |
+| `kandji_device`       | **ASSIGNED**          | `kandji_profile`      |
 | `kandji_device`       | **HAS**               | `kandji_user`         |
 
 <!--
