@@ -1,6 +1,6 @@
 {
   "name": "@jupiterone/graph-kandji",
-  "version": "1.3.2",
+  "version": "1.3.5",
   "description": "A JupiterOne Integration for ingesting data of Kandji",
   "repository": {
     "type": "git",
@@ -35,12 +35,12 @@
     "prepush": "yarn format:check && yarn lint && yarn type-check && jest --changedSince main"
   },
   "peerDependencies": {
-    "@jupiterone/integration-sdk-core": "^12.8.3"
+    "@jupiterone/integration-sdk-core": "^13.2.0"
   },
   "devDependencies": {
-    "@jupiterone/integration-sdk-core": "^12.8.3",
-    "@jupiterone/integration-sdk-dev-tools": "^12.8.3",
-    "@jupiterone/integration-sdk-testing": "^12.8.3"
+    "@jupiterone/integration-sdk-core": "^13.2.0",
+    "@jupiterone/integration-sdk-dev-tools": "^13.2.0",
+    "@jupiterone/integration-sdk-testing": "^13.2.0"
   },
   "dependencies": {
     "@lifeomic/attempt": "^3.0.3",
