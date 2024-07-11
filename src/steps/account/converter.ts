@@ -15,6 +15,7 @@ export function createAccountEntity(): Entity {
       assign: createAccountAssignEntity({
         _key: 'kandji-account',
         name: 'Kandji Account',
+        vendor: 'Kandji',
       }),
     },
   });
