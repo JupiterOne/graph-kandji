@@ -8,6 +8,14 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 1.3.5 - 2024-07-11
+
+### Updated
+
+- Updated the account entity to include the newly required `vendor` field.
+- Updated the sdk to version 13.2.0 to regenerate the schemas with the correct
+  format.
+
 ## 1.3.2 - 2024-06-27
 
 ### Fixed
