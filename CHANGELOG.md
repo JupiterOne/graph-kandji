@@ -8,6 +8,18 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 1.4.0 - 2024-07-12
+
+### Added
+
+- Added the Blueprint entity
+- Added relationship between Device and Blueprint & Profile
+
+### Changed
+
+- The relationship between Device and app has been changed to INSTALLED instead
+  of HAS
+
 ## 1.3.5 - 2024-07-11
 
 ### Updated

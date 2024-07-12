@@ -154,3 +154,15 @@ export interface DeviceAppsResponse {
   device_id: string;
   apps: App[];
 }
+
+export interface Blueprint {
+  id: string;
+  name: string;
+  description: string;
+  params: string;
+  computers_count: string;
+  enrollment_code: {
+    code: string;
+    is_active: boolean;
+  };
+}

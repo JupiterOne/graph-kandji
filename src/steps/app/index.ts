@@ -33,7 +33,7 @@ export async function fetchDeviceApps({
 
         await jobState.addRelationship(
           createDirectRelationship({
-            _class: RelationshipClass.HAS,
+            _class: RelationshipClass.INSTALLED,
             from: deviceEntity,
             to: appEntity,
             // Moving properties that can't be shared in the appEntity to the
@@ -62,7 +62,7 @@ export const appSteps: IntegrationStep<IntegrationConfig>[] = [
     id: IntegrationSteps.FETCH_DEVICE_APPS,
     name: 'Fetch Device Apps',
     entities: [Entities.APP],
-    relationships: [Relationships.DEVICE_HAS_APP],
+    relationships: [Relationships.DEVICE_INSTALLED_APP],
     dependsOn: [IntegrationSteps.DEVICES],
     executionHandler: fetchDeviceApps,
   },

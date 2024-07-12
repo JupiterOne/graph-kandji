@@ -177,3 +177,18 @@ export const [CustomProfileEntityMetadata, createCustomProfileAssignEntity] =
       mdmIdentifier: SchemaType.Optional(SchemaType.String()),
     }),
   });
+
+export const [BlueprintEntityMetadata, createBlueprintAssignEntity] =
+  createEntityMetadata({
+    resourceName: 'Blueprint',
+    _class: ['Configuration'],
+    _type: createEntityType('blueprint'),
+    description: 'Kandji Blueprint',
+    schema: SchemaType.Object({
+      id: SchemaType.String(),
+      name: SchemaType.String(),
+      description: SchemaType.String(),
+      computersCount: SchemaType.String(),
+      enrollmentCodeActive: SchemaType.Boolean(),
+    }),
+  });
