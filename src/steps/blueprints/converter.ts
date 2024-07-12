@@ -18,10 +18,9 @@ export function createBlueprintEntity(blueprint: Blueprint): Entity {
         id: blueprint.id,
         name: blueprint.name,
         description: blueprint.description,
-        params: blueprint.params,
         computersCount: blueprint.computers_count,
-        enrollmentCode: blueprint.enrollment_code.code,
-        activeStatus: blueprint.enrollment_code.is_active,
+        enrollmentCodeActive: blueprint.enrollment_code.is_active,
+        // enrollmentCode: blueprint.enrollment_code.code, // Caution, value may be sensitive data.
       }),
     },
   });
