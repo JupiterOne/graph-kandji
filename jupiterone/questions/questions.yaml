@@ -1,15 +1,27 @@
 ---
-sourceId: managed:template
+sourceId: managed:kandji
 integrationDefinitionId: '${integration_definition_id}'
-questions: []
-  # - id: integration-question-template-replace-me
-  #   title: What kinds of questions will this integration support?
-  #   description:
-  #     TODO Every integration should contribute questions! Please be carefule
-  #     to replace this before deploying the integration to JupiterOne.
-  #   queries:
-  #     - name: good
-  #       query: |
-  #         find * with _integrationDefinitionId = '${integration_definition_id}'
-  #   tags:
-  #     - template
+questions: 
+ - id: integration-question-kandji-custom-app-with-no-bundleSize-identified
+   title: Which Kandji custom applications do not have a bundleSize?
+   description:
+     Returns a list of custom Kandji applications that do not have a bundleSize limit.
+   queries:  
+     - name: BAD
+       query: |
+         FIND kandji_app with (displayName != "apple" AND bundleSize = "")
+   tags:
+     - kandji
+     - applications
+
+ - id: integration-question-kandji-custom-self-service-app-without-a-registered-apple-device
+   title: Which Kandji self service applications do not have a registered Apple device?
+   description:
+     Returns a list of Kandji custom self service applications that have not registered an Apple device.
+   queries:  
+     - name: BAD
+       query: |
+         FIND kandji_app with name ~= "Self" THAT HAS kandji_device WITH category = "" AND make = ""
+   tags:
+     - kandji
+     - workflow     
