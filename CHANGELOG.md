@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 1.4.1 - 2024-08-16
+
+### Added
+
+- Pagination to custom profile step
+
 ## 1.4.0 - 2024-07-12
 
 ### Added
