@@ -98,16 +98,19 @@ export class APIClient {
   public async iterateCustomProfiles(
     iteratee: ResourceIteratee<CustomProfiles>,
   ) {
-    const endpoint = this.withBaseUri('library/custom-profiles', {
-      page: '1',
-    });
+    let page = '1';
+    do {
+      const endpoint = this.withBaseUri('library/custom-profiles', {
+        page: page,
+      });
 
-    const body = await this.request<CustomProfiles[]>(endpoint);
-    const results = (body as any).results;
-
-    for (const result of results) {
-      await iteratee(result);
-    }
+      const body = await this.request<CustomProfiles[]>(endpoint);
+      const results = (body as any).results;
+      page = (body as any).next;
+      for (const result of results) {
+        await iteratee(result);
+      }
+    } while (page != null);
   }
   public async iterateDevices(iteratee: ResourceIteratee<Device>) {
     let offset = 0;
